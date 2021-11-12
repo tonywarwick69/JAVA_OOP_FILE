@@ -1,0 +1,111 @@
+{
+	"folders": {},
+	"connections": {
+		"microsoft-17c938ecfcd-2b5b331076c8ae3": {
+			"provider": "sqlserver",
+			"driver": "microsoft",
+			"name": "master",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1433",
+				"database": "master",
+				"url": "jdbc:sqlserver://;serverName=localhost;databaseName=master",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-authentication@": "SQL_SERVER_PASSWORD",
+					"@dbeaver-show-all-schemas@": "false"
+				}
+			}
+		},
+		"microsoft-17c939220fc-3f23d68a6bff23bd": {
+			"provider": "sqlserver",
+			"driver": "microsoft",
+			"name": "QLTiemThuoc",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1433",
+				"database": "QLTiemThuoc",
+				"url": "jdbc:sqlserver://;serverName=localhost;databaseName=QLTiemThuoc",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-authentication@": "SQL_SERVER_PASSWORD",
+					"@dbeaver-show-all-schemas@": "false"
+				}
+			}
+		},
+		"microsoft-17c93950828-5917bd6fa27fbd58": {
+			"provider": "sqlserver",
+			"driver": "microsoft",
+			"name": "master 2",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1433",
+				"database": "master",
+				"url": "jdbc:sqlserver://;serverName=localhost;databaseName=master",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-authentication@": "SQL_SERVER_PASSWORD",
+					"@dbeaver-show-all-schemas@": "false"
+				}
+			}
+		},
+		"microsoft-17cb8515612-4073d7522f7c610d": {
+			"provider": "sqlserver",
+			"driver": "microsoft",
+			"name": "master 3",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1433",
+				"database": "master",
+				"url": "jdbc:sqlserver://;serverName=localhost;databaseName=master",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-authentication@": "SQL_SERVER_PASSWORD",
+					"@dbeaver-show-all-schemas@": "false"
+				}
+			}
+		},
+		"microsoft-17cf5f98425-7ede3dcd2138c7e": {
+			"provider": "sqlserver",
+			"driver": "microsoft",
+			"name": "master 4",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1433",
+				"database": "master",
+				"url": "jdbc:sqlserver://;serverName=localhost;databaseName=master",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-authentication@": "SQL_SERVER_PASSWORD",
+					"@dbeaver-show-all-schemas@": "false"
+				},
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
