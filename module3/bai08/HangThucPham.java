@@ -1,45 +1,59 @@
 package bai08;
 
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class HangThucPham extends HangHoa {
-	protected String nhacungcap;
-	protected LocalDate ngaysanxuat;
-	protected LocalDate ngayhethan;
+public class HangThucPham extends HangHoa{
+	private String nhaCungCap;
+	private Date ngaySanXuat;
+	private Date ngayHetHan;
+	public String getNhaCungCap() {
+		return nhaCungCap;
+	}
+	public void setNhaCungCap(String nhaCungCap) {
+		this.nhaCungCap = nhaCungCap;
+	}
+	public Date getNgaySanXuat() {
+		return ngaySanXuat;
+	}
+	public void setNgaySanXuat(Date ngaySanXuat){
+		Date ngayHienTai = new Date();
+		if(ngaySanXuat.compareTo(ngayHienTai)<0)
+			this.ngaySanXuat = ngaySanXuat;
+		else
+			this.ngaySanXuat= new Date();
+	}
+	public Date getNgayHetHan() {
+	return ngayHetHan;
+	}
+	public void setNgayHetHan(Date ngayHetHan) {
+		if(ngayHetHan.compareTo(this.ngaySanXuat) >0)
+			this.ngayHetHan = ngayHetHan;
+		else
+			this.ngayHetHan = getNgaySanXuat();
+	}
+	public HangThucPham(String maHang, String tenHang, int donGia, int slTon, String nhaCungCap, Date ngaySanXuat,
+		Date ngayHetHan) throws Exception {
+		super(maHang, tenHang, donGia, slTon);
+		this.nhaCungCap = nhaCungCap;
+		this.ngaySanXuat = ngaySanXuat;
+		this.ngayHetHan = ngayHetHan;
+	}
 	public HangThucPham() {
-		super();
-		// TODO Auto-generated constructor stub
+	}
+	public static String inTieuDe() {
+		String s="";
+		s+="Hang Thuc Pham\n";
+		s+=HangHoa.inTieuDe();
+		s+=String.format("%-15s|%15s|%15s|\n","Nha Cung Cap","Ngay San Xuat","Ngay Het Han");
+		for(int i=0;i<120;i++)
+			s+="-";
+		s+="\n";
+		return s;
 	}
 	@Override
 	public String toString() {
-		return "HangThucPham [nhacungcap=" + nhacungcap + ", ngaysanxuat=" + ngaysanxuat + ", ngayhethan=" + ngayhethan
-				+ ", mahang=" + mahang + ", tenhang=" + tenhang + ", dongia=" + dongia + ", soluong=" + soluong + "]";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		return super.toString()+ String.format("%-15s|%15s|%15s|",getNhaCungCap(),sdf.format(getNgaySanXuat()),sdf.format(getNgayHetHan()));
 	}
-	public HangThucPham(int mahang, String tenhang, double dongia, int soluong, String nhacungcap,
-			LocalDate ngaysanxuat, LocalDate ngayhethan) {
-		super(mahang, tenhang, dongia, soluong);
-		this.nhacungcap = nhacungcap;
-		this.ngaysanxuat = ngaysanxuat;
-		this.ngayhethan = ngayhethan;
-	}
-	public String getNhacungcap() {
-		return nhacungcap;
-	}
-	public void setNhacungcap(String nhacungcap) {
-		this.nhacungcap = nhacungcap;
-	}
-	public LocalDate getNgaysanxuat() {
-		return ngaysanxuat;
-	}
-	public void setNgaysanxuat(LocalDate ngaysanxuat) {
-		this.ngaysanxuat = ngaysanxuat;
-	}
-	public LocalDate getNgayhethan() {
-		return ngayhethan;
-	}
-	public void setNgayhethan(LocalDate ngayhethan) {
-		this.ngayhethan = ngayhethan;
-	}
-
-
 }

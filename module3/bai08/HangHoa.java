@@ -1,51 +1,84 @@
 package bai08;
 
-public class HangHoa {
-	protected int mahang;
-	protected String tenhang;
-	protected double dongia;
-	protected int soluong;
-	@Override
-	public String toString() {
-		return "HangHoa [mahang=" + mahang + ", tenhang=" + tenhang + ", dongia=" + dongia + ", soluong=" + soluong
-				+ "]";
+public abstract class HangHoa {
+	protected String maHang, tenHang;
+	protected int donGia,slTon;
+	public String getMaHang() {
+	return maHang;
+	}
+	public void setMaHang(String maHang) throws Exception {
+		if(maHang != null)
+			this.maHang = maHang;
+		else
+			throw new Exception("maHang khong Rong");
+	}
+	public String getTenHang() {
+		return tenHang;
+	}
+	public void setTenHang(String tenHang){
+		if(tenHang.equals(""))
+			this.tenHang = "xxx";
+		else
+			this.tenHang=tenHang;
+	}
+	public int getDonGia() {
+		return donGia;
+	}
+	public void setDonGia(int donGia) throws Exception {
+		if(donGia>=0)
+			this.donGia = donGia;
+		else
+			throw new Exception("donGia >= 0");
+	}
+	public int getSlTon() {
+		return slTon;
+	}
+	public void setSlTon(int slTon) throws Exception {
+		if(slTon >= 0)
+			this.slTon = slTon;
+		else
+			throw new Exception("slTon >= 0");
 	}
 	public HangHoa() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
-	public HangHoa(int mahang, String tenhang, double dongia, int soluong) {
-		super();
-		this.mahang = mahang;
-		this.tenhang = tenhang;
-		this.dongia = dongia;
-		this.soluong = soluong;
+	public HangHoa(String maHang, String tenHang, int donGia, int slTon) throws Exception {
+		setMaHang(maHang);
+		setTenHang(tenHang);
+		setDonGia(donGia);
+		setSlTon(slTon);
 	}
-	public int getMahang() {
-		return mahang;
+	public static String inTieuDe() {
+		String s="";
+		for(int i=0;i<120;i++)
+			s+="-";
+		s+=String.format("\n|%-15s|%-15s|%15s|%15s|","Ma Hang","Ten Hang","Don Gia","Sl Ton");
+		return s;
 	}
-public void setMahang(int mahang) {
-		
-		this.mahang = mahang;
+	@Override
+	public String toString() {
+		return String.format("|%-15s|%-15s|%15s|%15s|",getMaHang(),getTenHang(),getDonGia(),getSlTon());
 	}
-	public String getTenhang() {
-		return tenhang;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((maHang == null) ? 0 : maHang.hashCode());
+		return result;
 	}
-	public void setTenhang(String tenhang) {
-		this.tenhang = tenhang;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		HangHoa other = (HangHoa) obj;
+		if (maHang == null) {
+			if (other.maHang != null)
+				return false;
+		} else if (!maHang.equals(other.maHang))
+			return false;
+			return true;
 	}
-	public double getDongia() {
-		return dongia;
-	}
-	public void setDongia(double dongia) {
-		this.dongia = dongia;
-	}
-	public int getSoluong() {
-		return soluong;
-	}
-	public void setSoluong(int soluong) {
-		this.soluong = soluong;
-	}
-	
-
 }
