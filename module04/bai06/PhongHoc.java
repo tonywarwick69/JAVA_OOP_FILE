@@ -1,9 +1,9 @@
 package bai06;
 
-public abstract class PhongHoc {
+public abstract class PhongHoc implements Comparable<PhongHoc> {
 	private String maphong;
 	private String daynha;
-	private double dientich;
+	protected double dientich;
 	private int sobongden;
 	@Override
 	public int hashCode() {
@@ -43,7 +43,7 @@ public abstract class PhongHoc {
 		return true;
 	}
 	public String datchuan(double dientich,int sobongden) {
-		if(sobongden==dientich/10)
+		if(sobongden>=dientich/10)
 			return "Đạt chuẩn";
 		else 
 			return "Không đạt chuẩn";
@@ -52,12 +52,12 @@ public abstract class PhongHoc {
 		String s="";
 		for(int i=0;i<120;i++)
 			s+="-";
-		s+=String.format("\n|%-15s|%-15s|%15s|%15s|%15s","Mã phòng","Dãy nhà","Diện tích","Số bóng đèn","Chất lượng");
+		s+=String.format("\n|%-15s|%-15s|%15s|%15s|%15s","Mã phòng","Dãy nhà","Diện tích","Số bóng đèn","Ánh sáng");
 		return s;
 	}
 	@Override
 	public String toString() {
-		return String.format("|%-15s|%-15s|%15s|%15s|%15s",maphong,daynha,dientich,sobongden,datchuan(dientich,sobongden));
+		return String.format("\n|%-15s|%-15s|%15s|%15s|%15s",maphong,daynha,dientich,sobongden,datchuan(dientich,sobongden));
 	}
 	/**
 	 * 
@@ -127,6 +127,10 @@ public abstract class PhongHoc {
 	 */
 	public void setSobongden(int sobongden) {
 		this.sobongden = sobongden;
+	}
+	public int compareTo(PhongHoc p) {
+		//sort day nha dang dan
+		return this.getMaphong().compareTo(p.getMaphong());
 	}
 	
 

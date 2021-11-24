@@ -28,8 +28,8 @@ public class MainTest {
 		System.out.println("Danh sách hàng sau xóa:");
 		list.xoaHang("AAAAA");
 		System.out.println(list.toString());
-		HangHoa h5 = new HangDienMay("DDDDD","Máy bơm nước",12000,31,24,500);
-		list.capNhatHang("DDDDD", h5);
+		 h4 = new HangDienMay("DDDDD","Máy bơm nước",12000,31,24,500);
+		list.capNhatHang("DDDDD", h4);
 		System.out.println("Danh sách hàng sau cập nhật:\n"+list.toString());
 		}
 }
