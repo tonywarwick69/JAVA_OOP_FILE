@@ -9,8 +9,8 @@
 	<classpathentry kind="src" path="module2"/>
 	<classpathentry kind="src" path="giuaky"/>
 	<classpathentry kind="src" path="module3"/>
-	<classpathentry kind="src" path="thuongky"/>
 	<classpathentry kind="src" path="sendReceiver"/>
 	<classpathentry kind="src" path="module04"/>
+	<classpathentry kind="src" path="lan3"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

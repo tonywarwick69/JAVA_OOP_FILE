@@ -2,7 +2,9 @@ package bai04;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import bai06.PhongHoc;
 
@@ -30,14 +32,18 @@ public class ListStudent {
 		return i;
 	}
 	public boolean addStudent(Student sv) {
-		if(listSV.contains(sv) && listSV.contains(sv.getId())) {
+		
+		if(listSV.contains(sv)) {
+			System.out.println("trùng student");
 			return false;
 		} else {
+			
 			listSV.add(sv);
 			return true;
 		}
 		
 	}
+
 	public boolean updateStudent(int ssn, Student sv) {
 		if(listSV.set(getIndexByID(ssn),sv)!=null) {
 			return true;

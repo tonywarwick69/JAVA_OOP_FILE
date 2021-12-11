@@ -15,6 +15,7 @@ public class TestPhongHoc {
 		PhongHoc p5 = new PhongLyThuyet("B12","B",75,16,true);
 		PhongHoc p6 = new PhongThiNghiem("H2","H",60,5,"Hóa Sinh",50,false);
 		PhongHoc p7 = new PhongMayTinh("A09","A",90,4,65);
+		
 		ListPhongHoc list = new ListPhongHoc();
 		list.addPhong(p1);
 		list.addPhong(p2);
@@ -22,6 +23,8 @@ public class TestPhongHoc {
 		list.addPhong(p4);
 		list.addPhong(p5);
 		list.addPhong(p6);
+		list.addPhong(p7);
+
 		
 		System.out.println(list.toString());
 		p5 = new PhongLyThuyet("B12","B",72,16,false);

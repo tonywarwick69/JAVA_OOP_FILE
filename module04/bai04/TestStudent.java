@@ -1,6 +1,10 @@
 package bai04;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -15,7 +19,8 @@ public class TestStudent {
 		String birthdaytxt = "13/03/2000";
 		LocalDate birthday = LocalDate.parse(birthdaytxt,df);
 		Student sv1 = new Student(1,"Dong Duc Khang",birthday);
-		Student sv2 = new Student(2,"Luong My Duyen",LocalDate.parse("25/05/1999",df));
+		Student sv2 = new Student(1,"Luong My Duyen",LocalDate.parse("25/05/1999",df));
+		
 		list.addStudent(sv1);
 		list.addStudent(sv2);
 		System.out.println(list.toString());
