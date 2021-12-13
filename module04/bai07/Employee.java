@@ -1,30 +1,29 @@
-package module07;
+package bai07;
+
+import java.text.DecimalFormat;
 
 public abstract class Employee {
 	private  int payrollNumber;
-
+	private String Name;
+	protected double BasicMonthSalary;
+	DecimalFormat formatter = new DecimalFormat("#0.00");
 	/**
 	 * @return the payrollNumber
 	 */
 	public int getPayrollNumber() {
 		return payrollNumber;
 	}
-	private String Name;
-	protected double BasicMonthSalary;
-	public String inTieuDe() {
+	
+	public static String inTieuDe() {
 		String s="";
-		for(int i=0;i<120;i++)
-			s+="-";
-		s+=String.format("\n|%-15s|%-15s|%15s|","Mã nhân viên","Tên ","Lương");
+		s+=String.format("\n|%-15s|%-15s|%15s|","payrollNumber","Name ","BasicMonthSalary");
 		return s;
 	}
 	@Override
 	public String toString() {
-		return String.format("\\n|%-15s|%-15s|%15s|", payrollNumber,Name,getMonthlySalary());
+		return String.format("\n|%-15s|%-15s|%15s|", payrollNumber,Name,formatter.format(BasicMonthSalary));
 	}
-	private double getMonthlySalary() {
-		return BasicMonthSalary;
-	}
+
 	/**
 	 * 
 	 */
